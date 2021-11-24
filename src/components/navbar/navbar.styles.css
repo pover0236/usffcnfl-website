@@ -84,12 +84,13 @@ ul {
 		float: left;
 	}
 	ul {clear: left;}
-	li, li a, li.dropdown {
+	li, li.dropdown {
 		width: 100%;
 		text-align: left;
 		display: block;
 		padding: 3px 0px;
 	}
+	li a {padding: 3px 0px;}
 	.horiznav {display: none;}
 	.vertnav {display: block;}
 	.menu {padding: 10px 8px;}
