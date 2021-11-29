@@ -1,3 +1,9 @@
+li, button, input {
+	text-align: left;
+	padding: 0px 5px;
+	margin: 0px 5px;
+}
+
 nav {
 	background-color: #282c34;
 	width: 100%;
