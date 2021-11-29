@@ -1,100 +1,22 @@
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-
-  }
-  
-  li {
-	display: inline;
-	float: left;
-	color: white;
-  }
-  
-  li a, .dropbtn {
-	display: inline-block;
-	color:lightgrey;
-	text-align: left;
-	padding: 14px 16px;
-	text-decoration: none;
-  }
-  
-  li a:hover, .dropdown:hover .dropbtn {
-	color:white;
-	background-color: #333;
-  }
-
-  li a:active {
-	color:gray;
-  }
-  
-  li.dropdown {
-	display: inline;
-  }
-  
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-  }
-
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-  }
-  
-.dropdown-content a:hover {
-	background-color: #f1f1f1;
-	color: darkslategray
-	
-	}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
-.vertnav {
+nav {
+	background-color: #282c34;
 	width: 100%;
-	display: none;
 }
 
 .navbar {
 	z-index: 999;
 	position: fixed;
 	top: 0;
-	width: 100%;
-	background-color: #333;
 }
 
-@media screen and (max-width: 800px) {
-	li {font-size: small;}
-	.dropdown-content a {padding: 8px 12px;}
+.nav-item {
+	margin-top: 5px;
+	margin-left: 0px;
+	margin-right: 10px;
+	text-indent: 0px;
 }
 
-@media screen and (max-width: 500px) {
-	img {
-		padding: 0px 2px 10px 2px;
-		float: left;
-	}
-	ul {clear: left;}
-	li, li.dropdown {
-		width: 100%;
-		text-align: left;
-		display: block;
-		padding: 3px 0px;
-	}
-	li a {padding: 3px 0px;}
-	.horiznav {display: none;}
-	.vertnav {display: block;}
-	.menu {padding: 10px 8px;}
-	.menu-items {display: none;}
-	.menu:hover .menu-items {display: block;}
-	.dropdown-content {margin: 0px 0px 0px 50px}
-}
+.form-control:focus {
+	border-color:black;
+	box-shadow: 0 0 0 0.1rem darkgray;
+} 

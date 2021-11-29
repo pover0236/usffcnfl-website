@@ -1,52 +1,46 @@
 import React from 'react';
-import './navbar.styles.css';
+import 'bootstrap/js/dist/dropdown'
 
-const Navbar = () => (
-<div className='navbar'>
-	<div className='horiznav'>
-		<ul>
-			<li><a href='about#'>About</a></li>
-			<li className='dropdown'>
-				<a href='#semandtng'>Seminars and Training</a>
-				<div className="dropdown-content">
-						<a href="#schedule">Seminar Schedule</a>
-						<a href="#unscheduled">Unscheduled Training</a>
-				</div>			
-			</li>
-			<li className='dropdown'>
-				<a href='#riskfms'>Risk Management Forms</a>
-					<div className="dropdown-content">
-						<a href="#openrisks">Open Risk Forms</a>
-						<a href="#closedrisks">Closed Risk Forms</a>
-					</div>
-			</li>
-		</ul>
-	</div>
-	<div className='vertnav'>
-		<div className='menu'>
-			<a href='#menu-items'>
-				<img src={require('./menu.png')} width='25px' alt='menu' />
-			</a>
-			<ul className='menu-items'>
-				<li><a href='#about'>About</a></li>
-				<li className='dropdown'>
-					<a href='#semandtng'>Seminars and Training</a>
-					<div className="dropdown-content">
-							<a href="#schedule">Seminar Schedule</a>
-							<a href="#unscheduled">Unscheduled Training</a>
-					</div>
-				</li>	
-				<li className='dropdown'>
-					<a href='#riskfms'>Risk Management Forms</a>
-						<div className="dropdown-content">
-							<a href="#openrisks">Open Risk Forms</a>
-							<a href="#closedrisks">Closed Risk Forms</a>
-						</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './navbar.styles.css'
+
+const MyNavbar = () => (
+    <div id='navmenu'>
+        <nav className='navbar navbar-expand-sm navbar-dark'>
+            <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#NFLNavbar'>
+                <span className='navbar-toggler-icon'></span>
+            </button>
+            <div className='collapse navbar-collapse' id='NFLNavbar'>
+            <ul className='navbar-nav'>
+                <li className='nav-item' id='Home'><a className='nav-link' href='#'>Home</a></li>
+                <li className='nav-item dropdown' id='Seminars'>
+                    <a className='nav-link dropdown-toggle' id='tngDropdown' href='#semandtng' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Seminars and Training
+                    </a>
+                    <div className='dropdown-menu' aria-labelledby='tngDropdown'>
+                        <a className='dropdown-item' href='#schedule'>Seminar Schedule</a>
+                        <a className='dropdown-item' href='#unsched'>Unscheduled Training</a>
+                    </div>
+                </li>
+                <li className='nav-item dropdown' id='Risk'>
+                    <a className='nav-link dropdown-toggle' href='#' id='riskDropdown' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Risk Management Forms
+                    </a>
+                    <div className='dropdown-menu' aria-labelledby='riskDropdown'>
+                        <a className='dropdown-item' href='#openrisks'>Open Risk Forms</a>
+                        <a className='dropdown-item' href='#closedrisks'>Closed Risk Forms</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+            </li>
+            </ul>
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
 );
 
-export default Navbar;
+export default MyNavbar;
