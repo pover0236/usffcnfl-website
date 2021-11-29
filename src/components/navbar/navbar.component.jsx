@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 //@ts-ignore
 import 'bootstrap/dist/js/bootstrap.min';
 
@@ -12,34 +13,35 @@ const MyNavbar = () => (
                 <span className='navbar-toggler-icon'></span>
             </button>
             <div className='collapse navbar-collapse' id='NFLNavbar'>
-            <ul className='navbar-nav'>
-                <li className='nav-item' id='Home'><a className='nav-link' href='#home'>Home</a></li>
-                <li className='nav-item dropdown' id='Seminars'>
-                    <a className='nav-link dropdown-toggle' id='tngDropdown' href='#semandtng' role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Seminars and Training
-                    </a>
-                    <div className='dropdown-menu' aria-labelledby='tngDropdown'>
-                        <a className='dropdown-item' href='#schedule'>Seminar Schedule</a>
-                        <a className='dropdown-item' href='#unsched'>Unscheduled Training</a>
-                    </div>
+                <ul className='navbar-nav'>
+                    <li className='nav-item' id='Home'><Link className='nav-link' to='/'>Home</Link></li>
+                    <li className='nav-item dropdown' id='Seminars'>
+                        <a className='nav-link dropdown-toggle' id='tngDropdown' href='#semandtng' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Seminars and Training
+                        </a>
+                        <div className='dropdown-menu' aria-labelledby='tngDropdown'>
+                            <Link className='dropdown-item' to='/seminars'>Seminar Schedule</Link>
+                            <Link className='dropdown-item' to='/unscheduled'>Unscheduled Training</Link>
+                        </div>
+                    </li>
+                    <li className='nav-item dropdown' id='Risk'>
+                        <a className='nav-link dropdown-toggle' href='#risks' id='riskDropdown' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Risk Management Forms
+                        </a>
+                        <div className='dropdown-menu' aria-labelledby='riskDropdown'>
+                            <Link className='dropdown-item' to='/openrisks'>Open Risk Forms</Link>
+                            <Link className='dropdown-item' to='/closedrisks'>Closed Risk Forms</Link>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
                 </li>
-                <li className='nav-item dropdown' id='Risk'>
-                    <a className='nav-link dropdown-toggle' href='#risks' id='riskDropdown' role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Risk Management Forms
-                    </a>
-                    <div className='dropdown-menu' aria-labelledby='riskDropdown'>
-                        <a className='dropdown-item' href='#openrisks'>Open Risk Forms</a>
-                        <a className='dropdown-item' href='#closedrisks'>Closed Risk Forms</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-            </li>
-            </ul>
+                </ul>
+
+            </div>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>
-            </div>
         </nav>
     </div>
 );
