@@ -5,8 +5,8 @@ li {
 }
 
 button, input {
-	padding: 0px 5px;
-	margin: 0px 5px;
+	padding: 0px 5px 5px 5px;
+	margin: 0px 5px 5px 5px;
 }
 
 nav {
@@ -14,9 +14,8 @@ nav {
 	width: 100%;
 }
 
-
 .navbar {
-	z-index: 999;
+	z-index: 998;
 	position: fixed;
 	top: 0;
 }
@@ -24,11 +23,18 @@ nav {
 .nav-item {
 	margin-top: 5px;
 	margin-left: 0px;
-	margin-right: 10px;
+	margin-right: 5px;
 	text-indent: 0px;
 }
 
 .form-control:focus {
 	border-color:black;
 	box-shadow: 0 0 0 0.1rem darkgray;
-} 
+}
+
+.d-flex {
+	z-index: 999;
+	position: fixed;
+	top: 12px;
+	right: 5px;
+}

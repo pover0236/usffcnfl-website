@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 //@ts-ignore
 import 'bootstrap/dist/js/bootstrap.min';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.styles.css'
 
 const MyNavbar = () => (
     <div id='navmenu'>
-        <nav className='navbar navbar-expand-sm navbar-dark'>
+        <nav className='navbar navbar-expand-md navbar-dark'>
             <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#NFLNavbar'>
                 <span className='navbar-toggler-icon'></span>
             </button>
@@ -36,13 +35,12 @@ const MyNavbar = () => (
                     <li class="nav-item dropdown">
                 </li>
                 </ul>
-
             </div>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-secondary" type="submit">Search</button>
-            </form>
         </nav>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
     </div>
 );
 
