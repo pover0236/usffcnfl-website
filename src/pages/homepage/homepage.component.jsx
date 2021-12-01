@@ -6,9 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './homepage.styles.css';
 
 import vertrep from '../../images/vertrep.jpg';
-import ships from '../../images/ships.jpg';
-import unrep from '../../images/unrep.jpg';
-import classroom from '../../images/classroom.jpg';
 import nfl from '../../images/nfl.png';
 import usffc from '../../images/usffc.png';
 
@@ -20,14 +17,14 @@ const Homepage = () => (
             <h2>U.S. Fleet Forces Command (USFFC)</h2>
             <h1>Naval Forces Logistics (NFL) Training and Support Services</h1>
             <div style={{ 
-                borderTop: "2px solid #fff ", 
+                borderTop: "6px solid #ff3300", 
                 marginTop: 20,
                 marginLeft: 0, 
-                marginRight: 30 }}></div>
+                marginRight: 145 }}></div>
             <img className='insignia' src={ nfl } alt='Naval Forces Logistics insiginia' />
             <img className='insignia' src={ usffc } alt='U.S. Fleet Forces insiginia' />
         </div>
-            <div style={{padding: '0px 45px'}}>
+        <div style={{padding: '0px 45px'}}>
 			<h4>About Us</h4>
 			<p>The Naval Forces Logistics team has been delivering quality logistics support services to
 			the fleet under various programs for over 30 years. Our extensive legacy of service began in 1987
@@ -87,8 +84,10 @@ const Homepage = () => (
 			</ul>
 			<p>To see a schedule of seminars for the current fiscal year, or a list of training available upon request,
 			click the “Seminars and Training” link in the navigation bar at the top of this page.</p>
-            </div>
-		</div>
+			<p style={{color: 'black'}}>p</p>
+			<p style={{color: 'black'}}>p</p>
+        </div>
+	</div>
 );
 
 export default Homepage;
