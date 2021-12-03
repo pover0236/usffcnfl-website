@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 //@ts-ignore
 import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './navbar.styles.css'
+import './navbar.styles.scss'
 
 const MyNavbar = () => (
     <div id='navmenu'>

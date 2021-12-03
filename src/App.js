@@ -7,6 +7,7 @@ import Seminars from './pages/seminars/seminars.component';
 import Unscheduled from './pages/unscheduled/unsched.component'
 import OpenRisks from './pages/openrisks/openrisks.component';
 import ClosedRisks from './pages/closedrisks/closedrisks.component';
+import Testpage from './pages/testpage.component';
 
 import './App.scss';
 
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/unscheduled' element={<Unscheduled />} />
           <Route exact path='/openrisks' element={<OpenRisks />} />
           <Route exact path='/closedrisks' element={<ClosedRisks />} />
+          <Route exact path='/testpage' element={<Testpage />} />
         </Routes>
       </div>
     </div>

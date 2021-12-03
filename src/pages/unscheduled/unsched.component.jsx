@@ -1,8 +1,15 @@
 import React from 'react';
+import Banner from '../../components/banner/banner.component';
+
+import './unsched.styles.scss';
 
 const Unscheduled = () => (
     <div>
-        <h1>Unscheduled Training</h1>
+        <Banner />
+        <div className='unscheduled'>
+ 
+        </div>
+
     </div>
 );
 

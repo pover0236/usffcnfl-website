@@ -1,8 +1,15 @@
 import React from 'react';
+import Banner from '../../components/banner/banner.component';
+
+import './closedrisks.styles.scss';
 
 const ClosedRisks = () => (
     <div>
-        <h1>Closed Risks</h1>
+        <Banner />
+        <div className='closedrisks'>
+ 
+        </div>
+
     </div>
 );
 

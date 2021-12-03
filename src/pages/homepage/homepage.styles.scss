@@ -1,0 +1,60 @@
+.homepage {
+    .masthead {
+        h1 {
+            color:lightgray;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 3.5vw;
+        }
+
+        h2 {
+            color:lightgray;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 2vw;
+        }
+
+        .masthead-img {
+            z-index: 0;
+            width: 100%;
+        }
+        
+        .title {
+            position: absolute;
+            top: 5%;
+            left: 3%;
+            width: 35%;
+        }
+        
+        .insignia {
+            width: 9vw;
+            margin: 15px 10px 10px 0px
+        }
+    }
+
+    .about {
+
+        background-color: black;
+
+        h4 {
+            color:lightgray;
+        }
+
+        p {
+            color: lightgray;
+            font-size: large;
+            margin-top: 10px;
+            
+        }
+
+        ul {
+            margin-top: 0px;
+            padding-left: 7px;
+        }
+
+        li {
+            color: lightgray;
+            font-size: large;
+            list-style-position: inside;
+        }
+
+    }
+}

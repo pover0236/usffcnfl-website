@@ -1,9 +1,15 @@
 import React from 'react';
 import Banner from '../../components/banner/banner.component';
 
+import './seminars.styles.scss';
+
 const Seminars = () => (
     <div>
-        <h1>Seminars</h1>
+        <Banner />
+        <div className='seminars'>
+ 
+        </div>
+
     </div>
 );
 

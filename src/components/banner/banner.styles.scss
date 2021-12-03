@@ -1,0 +1,32 @@
+.banner {
+    z-index: 999;
+    width: 1920vw;
+    height: auto;
+    background-color: black;
+
+    h1 {
+        color: white;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 3vw; 
+        padding-top: .06%;
+    }
+
+    h2 {
+        color: white;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 2.5vw;
+        padding-bottom: .08%;
+    }
+
+    img{
+        height: 22vh;
+        padding: .06% .08% .08% .06%;
+        float: left;
+    }
+
+    .banner-title {
+
+
+    }
+
+}
