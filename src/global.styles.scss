@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px) {
+	p, li, th, td, button {
+		font-size: smaller;
+		text-align: left;
+	}
+	.conditional {display: none;}
+	.smallTitle {display: block;}
+}
+
+@media print {
+	.noprint {
+		display: none;
+	}
+}

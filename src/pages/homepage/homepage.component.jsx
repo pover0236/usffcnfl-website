@@ -1,8 +1,5 @@
 import React from 'react';
-//@ts-ignore
-import 'bootstrap/dist/js/bootstrap.min';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './homepage.styles.scss';
 
 import vertrep from '../../images/vertrep.jpg';
@@ -12,22 +9,28 @@ import usffc from '../../images/usffc.png';
 
 const Homepage = () => (
     <div className='homepage' style={{position: 'fixed', overflow: 'scroll', height: '100vh'}}>
-		<div className='masthead'>
+		<div className='masthead conditional'>
 			<img className='masthead-img' src={ vertrep } alt='A vertical replenishment in progress' />
 			<div className='title'>
 				<h2>U.S. Fleet Forces Command (USFFC)</h2>
-				<h1>Naval Forces Logistics (NFL) Training and Support Services</h1>
+				<h1>Naval Forces Logistics (NFL) Support and Training Services</h1>
 				<div style={{ 
 					borderTop: "6px solid #ff3300", 
 					marginTop: 20,
 					marginLeft: 0,
 					marginBottom: 5,
-					marginRight: 145 }}></div>
+					marginRight: 145 }}>
+				</div>
 				<img className='insignia' src={ nfl } alt='Naval Forces Logistics insiginia' />
 				<img className='insignia' src={ usffc } alt='U.S. Fleet Forces insiginia' />
 			</div>
 		</div>
-        <div className='about' style={{padding: '0px 45px'}}>
+
+        <div className='about'>
+			<div className='smallTitle'>
+				<h2>U.S. Fleet Forces Command (USFFC)</h2>
+				<h1>Naval Forces Logistics (NFL) Support and Training Services</h1>
+			</div>
 			<h4>About Us</h4>
 			<p>The Naval Forces Logistics team has been delivering quality logistics support services to
 			the fleet under various programs for over 30 years. Our extensive legacy of service began in 1987

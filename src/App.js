@@ -10,6 +10,8 @@ import ClosedRisks from './pages/closedrisks/closedrisks.component';
 import Testpage from './pages/testpage.component';
 
 import './App.scss';
+import './global.styles.scss';
+
 
 function App() {
   return (
