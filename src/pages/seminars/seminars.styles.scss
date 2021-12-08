@@ -4,13 +4,11 @@
     overflow: scroll;
     height: 100vh;
     width: 100vw;
-
     .intro {
         width: 100%;
         padding-top: 10px;
         padding-left: 20px;
         padding-right: 20px;
-
         p {
             color: black;
             width: 100%;
@@ -18,9 +16,6 @@
             word-break: normal;
             white-space: normal;
             word-wrap: break-word;
-
         }
-
     }
-
 }

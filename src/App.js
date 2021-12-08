@@ -12,7 +12,6 @@ import Testpage from './pages/testpage.component';
 import './App.scss';
 import './global.styles.scss';
 
-
 function App() {
   return (
     <div className="App">

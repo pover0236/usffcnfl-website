@@ -7,23 +7,19 @@
             font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-size: 3.5vw;
         }
-
         h2 {
             color:lightgray;
             font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-size: 2vw;
         }
-
         .masthead-img {
             z-index: 0;
             width: 100%;
         }
-
         .insignia {
             width: 9vw;
             margin: 15px 10px 10px 0px
         }
-        
         .title {
             position: absolute;
             top: 5%;
@@ -31,13 +27,11 @@
             width: 35%;
         }
     }
-
     .about {
         background-color: black;
         padding-top: 1%;
         padding-left: 3%;
         padding-right: 3%;
-
         h4 {
             color:lightgray;
         }
@@ -46,12 +40,10 @@
             font-size: large;
             margin-top: 10px;
         }
-
         ul {
             margin-top: 0px;
             padding-left: 7px;
         }
-
         li {
             color: lightgray;
             font-size: large;
@@ -59,7 +51,6 @@
         }
     }
 }
-
 .smallTitle {
     position: static;
     display: none;

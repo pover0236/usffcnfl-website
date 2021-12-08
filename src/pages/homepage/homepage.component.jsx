@@ -6,7 +6,6 @@ import vertrep from '../../images/vertrep.jpg';
 import nfl from '../../images/nfl.png';
 import usffc from '../../images/usffc.png';
 
-
 const Homepage = () => (
     <div className='homepage' style={{position: 'fixed', overflow: 'scroll', height: '100vh'}}>
 		<div className='masthead conditional'>

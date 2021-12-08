@@ -17,8 +17,6 @@ const Unscheduled = () => (
             unscheduled training.</p>
         </div>
     </div>
-
-
 );
 
 export default Unscheduled;
