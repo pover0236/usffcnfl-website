@@ -16,6 +16,17 @@ const Unscheduled = () => (
             check the Seminar Schedule to see if there is a regularly scheduled seminar that meets your training needs before requesting any
             unscheduled training.</p>
         </div>
+        <div className='unsched'>
+        <table class='table table-condensed'>
+            <thead className='colHead'>
+				<tr>
+					<th>Topic</th>
+					<th>Offered By</th>
+					<th class='centered'>Request</th>
+				</tr>
+            </thead>
+		</table>
+        </div>
     </div>
 );
 

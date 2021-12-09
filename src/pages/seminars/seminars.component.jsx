@@ -14,6 +14,20 @@ const Seminars = () => (
             <p>To register for a seminar, click the "Register" button to the right of the seminar's title. Note that multiple
             student's can be registered for a seminar on a single registration form.</p>
         </div>
+        <div className='schedule'>
+        <table className='table table-condensed'>
+			<thead className='colHead'>
+				<tr>
+					<th>Date(s)</th>
+					<th>Class</th>
+					<th>Offered By</th>
+					<th>Location</th>
+					<th className='centered'>Registration</th>
+				</tr>
+			</thead>
+			<tbody id='schedule'></tbody>
+		</table>
+        </div>
  
     </div>
 );
