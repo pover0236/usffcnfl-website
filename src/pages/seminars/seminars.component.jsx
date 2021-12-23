@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../components/banner/banner.component';
+import { getSchedule } from './schedule';
 
 import './seminars.styles.scss';
 
@@ -25,7 +26,9 @@ const Seminars = () => (
 					<th className='centered'>Registration</th>
 				</tr>
 			</thead>
-			<tbody id='schedule'></tbody>
+			<tbody id='schedule'>
+                getSchedule('courseName')
+            </tbody>
 		</table>
         </div>
  
