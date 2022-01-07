@@ -11,15 +11,6 @@ import './index.css';
 
 import App from './App';
 
-import * as AWS from 'aws-sdk'
-
-AWS.config.update({ region: "us-east-1", });
-
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-	IdentityPoolId: "us-east-1:63731e7d-6fe1-4073-9390-6b5ea777b0c3",
-	RoleArn: "arn:aws:iam::063813534118:role/Cognito_DynamoPoolUnauth"
-});
-
 ReactDOM.render(
   <BrowserRouter>
     <App />

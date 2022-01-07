@@ -24,8 +24,7 @@ var params = {
 
 async function FetchData() {
     try {
-        const response = await docClient.query(params).promise()
-		console.log(response.Items)
+        var response = await docClient.query(params).promise()
 		return response.Items
     } catch (error) {
         console.error(error);
@@ -54,7 +53,7 @@ function JsonDataDisplay() {
 			)
 		}
 	)
-	console.log(DisplayData)
+
     return(
         <div className='schedule'>
             <table className='table table-striped'>
@@ -78,73 +77,73 @@ function JsonDataDisplay() {
  }
 
 
-// Get a properly formatted date range from passed 'start' and 'end' dates
-function getDateString(s,e) {
-	var sDate, eDate, dateString;
-	sDate = new Date(s);
-	eDate = new Date(e);
-	if (s === e) {
-		dateString =
-			sDate.getDate() + " " +
-			getShortMonthName(sDate.getMonth()) + " " +
-			sDate.getFullYear().toString().substr(2,3);
-	} else if (sDate.getMonth() === eDate.getMonth()) {
-		dateString =
-			sDate.getDate() + "-" +
-			eDate.getDate() + " " +
-			getShortMonthName(sDate.getMonth()) + " " +
-			sDate.getFullYear().toString().substr(2,3);
-	} else if (sDate.getFullYear() === eDate.getFullYear()) {
-			dateString =
-				sDate.getDate() + " " +
-				getShortMonthName(sDate.getMonth()) + " - " +
-				eDate.getDate() + " " +
-				getShortMonthName(eDate.getMonth()) + " " +
-				sDate.getFullYear().toString().substr(2,3);
-	} else {
+	// Get a properly formatted date range from passed 'start' and 'end' dates
+	function getDateString(s,e) {
+		var sDate, eDate, dateString;
+		sDate = new Date(s);
+		eDate = new Date(e);
+		if (s === e) {
 			dateString =
 				sDate.getDate() + " " +
 				getShortMonthName(sDate.getMonth()) + " " +
-				sDate.getFullYear().toString().substr(2,3) + " - " +
+				sDate.getFullYear().toString().substr(2,3);
+		} else if (sDate.getMonth() === eDate.getMonth()) {
+			dateString =
+				sDate.getDate() + "-" +
 				eDate.getDate() + " " +
-				getShortMonthName(eDate.getMonth()) + " " +
-				eDate.getFullYear().toString().substr(2,3);
+				getShortMonthName(sDate.getMonth()) + " " +
+				sDate.getFullYear().toString().substr(2,3);
+		} else if (sDate.getFullYear() === eDate.getFullYear()) {
+				dateString =
+					sDate.getDate() + " " +
+					getShortMonthName(sDate.getMonth()) + " - " +
+					eDate.getDate() + " " +
+					getShortMonthName(eDate.getMonth()) + " " +
+					sDate.getFullYear().toString().substr(2,3);
+		} else {
+				dateString =
+					sDate.getDate() + " " +
+					getShortMonthName(sDate.getMonth()) + " " +
+					sDate.getFullYear().toString().substr(2,3) + " - " +
+					eDate.getDate() + " " +
+					getShortMonthName(eDate.getMonth()) + " " +
+					eDate.getFullYear().toString().substr(2,3);
+		}
+		return dateString;
 	}
-	return dateString;
-}
 
-// Return an abbrevieated month based on the month passed
-function getShortMonthName(m) {
-	var mString
-	switch(m) {
-		case 0: mString = "Jan";
-		break;
-		case 1: mString = "Feb";
-		break;
-		case 2: mString = "Mar";
-		break;
-		case 3: mString = "Apr";
-		break;
-		case 4: mString = "May";
-		break;
-		case 5: mString = "Jun";
-		break;
-		case 6: mString = "Jul";
-		break;
-		case 7: mString = "Aug";
-		break;
-		case 8: mString = "Sep";
-		break;
-		case 9: mString = "Oct";
-		break;
-		case 10: mString = "Nov";
-		break;
-		case 11: mString = "Dec";
-		break;
-		default: mString = "";
+	// Return an abbrevieated month based on the month passed
+	function getShortMonthName(m) {
+		var mString
+		switch(m) {
+			case 0: mString = "Jan";
+			break;
+			case 1: mString = "Feb";
+			break;
+			case 2: mString = "Mar";
+			break;
+			case 3: mString = "Apr";
+			break;
+			case 4: mString = "May";
+			break;
+			case 5: mString = "Jun";
+			break;
+			case 6: mString = "Jul";
+			break;
+			case 7: mString = "Aug";
+			break;
+			case 8: mString = "Sep";
+			break;
+			case 9: mString = "Oct";
+			break;
+			case 10: mString = "Nov";
+			break;
+			case 11: mString = "Dec";
+			break;
+			default: mString = "";
+		}
+		return mString;
 	}
-	return mString;
-}
 
 	// Return a full month name based the month passed
 	/* function getFullMonthName(m) {

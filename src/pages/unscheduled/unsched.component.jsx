@@ -12,17 +12,17 @@ const Unscheduled = () => (
             description of any training topic by clicking its title. To request training on a topic listed below, click the "Request"
             button to the right of the training title, and provide your contact information on the form provided. A USFFC-NFL training
             representative will then contact you to set up the requested training.</p>
-            <p class="note"><b>NOTE: </b>Many of the classes listed below are offered as regularly scheduled seminars by other activities. Please
+            <p className="note"><b>NOTE: </b>Many of the classes listed below are offered as regularly scheduled seminars by other activities. Please
             check the Seminar Schedule to see if there is a regularly scheduled seminar that meets your training needs before requesting any
             unscheduled training.</p>
         </div>
         <div className='unsched'>
-        <table class='table table-condensed'>
+        <table className='table table-condensed'>
             <thead className='colHead'>
 				<tr>
 					<th>Topic</th>
 					<th>Offered By</th>
-					<th class='centered'>Request</th>
+					<th className='centered'>Request</th>
 				</tr>
             </thead>
 		</table>
