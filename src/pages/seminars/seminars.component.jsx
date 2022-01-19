@@ -1,6 +1,8 @@
 import React from 'react';
 import Banner from '../../components/banner/banner.component';
-import JsonDataDisplay from '../../components/schedule/displaySchedule.component';
+import DisplaySchedule from '../../components/schedule/displaySchedule.component'
+//import DisplaySchedule from '../../components/schedule/displayScheduleFromJSON'
+
 
 import './seminars.styles.scss';
 
@@ -15,9 +17,21 @@ const Seminars = () => (
             <p>To register for a seminar, click the "Register" button to the right of the seminar's title. Note that multiple
             student's can be registered for a seminar on a single registration form.</p>
         </div>
-        <div><JsonDataDisplay/></div>
+        <div className='schedule'>
+            <table className='table table-striped'>
+                <thead>
+                    <tr>
+                        <th>Date(s)</th>
+                        <th>Course</th>
+                        <th>Offered By</th>
+                        <th>Location</th>
+                        <th>Register</th>
+                    </tr>    
+                </thead>
+                <DisplaySchedule/>
+            </table>
+        </div>
     </div>
- 
 );
 
 export default Seminars;

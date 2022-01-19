@@ -1,41 +1,37 @@
+//import { CognitoIdentityCredentials } from 'aws-sdk';
 import React from 'react'
-//import FetchData from './fetchData.js'
 import FetchData from './schedule.json';
-
-//const data = FetchData()
-//console.log(data)
-//function DisplaySchedule() {return null}
 
 function DisplaySchedule() {
 	const data = FetchData
-		const getRows = data => {
-			let content =[];
-			for (let i = 0; i < data.length; i++) {
-				const item = data[i];
-				content.push(
-					<tr key={item.eventID}>
-					<td>{getDateString(item.startDate,item.endDate)}</td>
-					<td>{item.courseName} ({item.platform})</td>
-					<td>{item.team}</td>
-					<td>{item.installation} (Bldg. {item.bldg})</td>
-					<td className='centered' 
-						data-toggle='tooltip' 
-						title='Click to register'>
-							<button  type="button" 
-								className='btn btn-outline-secondary btn-sm regBtn'>
-									Register
-							</button>
-					</td>
-				</tr>
-				);
-			}
-			return content;
+	const getRows = data => {
+		let content =[];
+		for (let i = 0; i < data.length; i++) {
+			const item = data[i];
+			content.push(
+				<tr key={item.eventID}>
+				<td>{getDateString(item.startDate,item.endDate)}</td>
+				<td>{item.courseName} ({item.platform})</td>
+				<td>{item.team}</td>
+				<td>{item.installation} (Bldg. {item.bldg})</td>
+				<td className='centered' 
+					data-toggle='tooltip' 
+					title='Click to register'>
+						<button  type="button" 
+							className='btn btn-outline-secondary btn-sm regBtn'>
+								Register
+						</button>
+				</td>
+			</tr>
+			);
 		}
+		return content;
+	}
 	return <tbody>{getRows(data)}</tbody>
 }
-
+		
 // Get a properly formatted date range from passed 'start' and 'end' dates
-const getDateString = function(s,e) {
+const getDateString = function (s,e) {
 	var sDate, eDate, dateString;
 	sDate = new Date(s);
 	eDate = new Date(e);
@@ -70,7 +66,7 @@ const getDateString = function(s,e) {
 }
 
 // Return an abbrevieated month based on the month passed
-const getShortMonthName = function(m) {
+const getShortMonthName = function (m) {
 	var mString
 	switch(m) {
 		case 0: mString = "Jan";
@@ -101,7 +97,6 @@ const getShortMonthName = function(m) {
 	}
 	return mString;
 }
-
 /*
 // Return a full month name based the month passed
 const getFullMonthName = function(m) {
@@ -134,6 +129,6 @@ const getFullMonthName = function(m) {
 		default: mString = "";
 	}
 	return mString;
-} */
+}*/
 
 export default DisplaySchedule;

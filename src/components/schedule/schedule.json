@@ -1,5 +1,4 @@
-{
-    "Items": [
+[
         {
             "eventID": "ATGL-S-20220105-3187",
             "bldg": "CEP-195",
@@ -1287,7 +1286,4 @@
             "installation": "NAVSTA San Diego",
             "courseName": "OMMS-NG for RPPO and Workcenter Supervisor"
         }
-    ],
-    "Count": 99,
-    "ScannedCount": 99
-}
+    ]
