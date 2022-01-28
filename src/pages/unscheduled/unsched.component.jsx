@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../../components/banner/banner.component';
-
+import DisplayUnsched from '../../components/unscheduled/unsched.component';
 import './unsched.styles.scss';
 
 const Unscheduled = () => (
@@ -17,15 +17,7 @@ const Unscheduled = () => (
             unscheduled training.</p>
         </div>
         <div className='unsched'>
-        <table className='table table-condensed'>
-            <thead className='colHead'>
-				<tr>
-					<th>Topic</th>
-					<th>Offered By</th>
-					<th className='centered'>Request</th>
-				</tr>
-            </thead>
-		</table>
+            <DisplayUnsched />
         </div>
     </div>
 );

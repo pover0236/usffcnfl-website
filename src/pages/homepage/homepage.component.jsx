@@ -72,7 +72,7 @@ const Homepage = () => (
 			<p>In addition to on-site assistance and “over-the-shoulder” training, the USFFC NFL team conducts regularly
 			scheduled formal training seminars on a wide range of topics of interest to fleet logisticians. Each seminar
 			lasts from one to five days, and can be tailored to suit the specific needs of the audience in attendance.
-			cheduled seminars are conducted year-round at the following locations: </p>
+			Scheduled seminars are conducted year-round at the following locations: </p>
 			<ul>
 				<li>Naval Station (NAVSTA) Norfolk, VA</li>
 				<li>Naval Station (NAVSTA) San Diego, CA</li>

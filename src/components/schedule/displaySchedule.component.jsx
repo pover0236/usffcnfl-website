@@ -1,38 +1,108 @@
-import React from 'react'
-//import FetchData from './fetchData.js'
-import FetchData from './schedule.json';
+import React from 'react';
+import Async from 'react-async';
+import GenWrap from '../../genericWrapper';
 
-//const data = FetchData()
-//console.log(data)
-//function DisplaySchedule() {return null}
+//@ts-ignore
+import 'bootstrap/dist/js/bootstrap.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './schedule.styles.scss';
 
+let mnth = -1;
+
+// Request Data from API
+const loadSchedule = () =>
+  fetch("https://566tpdflpl.execute-api.us-east-1.amazonaws.com/items")
+    .then(res => (res.ok ? res : Promise.reject(res)))
+    .then(res => res.json())
+
+// DisplaySchedule component
 function DisplaySchedule() {
-	const data = FetchData
-		const getRows = data => {
-			let content =[];
-			for (let i = 0; i < data.length; i++) {
-				const item = data[i];
-				content.push(
-					<tr key={item.eventID}>
-					<td>{getDateString(item.startDate,item.endDate)}</td>
-					<td>{item.courseName} ({item.platform})</td>
-					<td>{item.team}</td>
-					<td>{item.installation} (Bldg. {item.bldg})</td>
-					<td className='centered' 
-						data-toggle='tooltip' 
-						title='Click to register'>
-							<button  type="button" 
-								className='btn btn-outline-secondary btn-sm regBtn'>
+	return (
+		<table className='table table-striped'>
+		<Async promiseFn={loadSchedule}>
+			{({ data, err, isLoading }) => {
+			//if (isLoading) return "Loading..."
+			//if (err) return `Something went wrong: ${err.message}`
+			if (isLoading) return (
+				<tbody>
+					<tr>
+						<td colSpan='5'>Loading...</td>
+					</tr>
+				</tbody>
+			)
+			if (err) return (
+				<tbody>
+					<tr>
+						<td colSpan='5'>`Something went wrong: ${err.message}`</td>
+					</tr>
+				</tbody>
+			)
+			if (data)
+			return (
+				<GenWrap>
+				<thead>
+					<tr>
+					  <th>Date(s)</th>
+					  <th>Seminar</th>
+					  <th>Offered By</th>
+					  <th>Location</th>
+					  <th>Register</th>
+					</tr>
+				</thead>
+				<tbody>
+				{data.Items.map(sched=> (
+					<GenWrap>
+						<GenWrap>
+							{getMonthHeader(mnth, sched.startDate)}
+						</GenWrap>
+						<tr key={sched.eventID}>
+							<td>{getDateString(sched.startDate,sched.endDate)}</td>
+							<td>{sched.courseName} ({sched.platform})</td>
+							<td>{sched.team}</td>
+							<td>{sched.installation} (Bldg. {sched.bldg})</td>
+							<td className='centered' 
+								data-toggle='tooltip' 
+								title='Click to register'>
+								<button  type="button" 
+									className='btn btn-outline-secondary btn-sm regBtn'>
 									Register
-							</button>
-					</td>
-				</tr>
+								</button>
+							</td>
+						</tr>
+					</GenWrap>
+				))}
+				</tbody>
+				</GenWrap>
+			)
+			}}
+		</Async>
+		<GenWrap>
+            <tfoot>
+                <tr><td></td></tr>
+                <tr><td></td></tr>
+                <tr><td></td></tr>
+                <tr><td></td></tr>
+            </tfoot>
+        </GenWrap>
+    </table>
+  );
+}
+
+const getMonthHeader = function(m, d){
+	let classDate = new Date(d);
+	let curMnth = m;
+			if (classDate.getMonth() > curMnth) {
+			mnth = classDate.getMonth()
+				return (
+					<tr className='monthName'>
+						<td colSpan='5'>
+							{getFullMonthName(curMnth+1)}
+						</td>
+					</tr>
 				);
 			}
-			return content;
-		}
-	return <tbody>{getRows(data)}</tbody>
-}
+			else {return null};
+};
 
 // Get a properly formatted date range from passed 'start' and 'end' dates
 const getDateString = function(s,e) {
@@ -71,69 +141,24 @@ const getDateString = function(s,e) {
 
 // Return an abbrevieated month based on the month passed
 const getShortMonthName = function(m) {
-	var mString
-	switch(m) {
-		case 0: mString = "Jan";
-		break;
-		case 1: mString = "Feb";
-		break;
-		case 2: mString = "Mar";
-		break;
-		case 3: mString = "Apr";
-		break;
-		case 4: mString = "May";
-		break;
-		case 5: mString = "Jun";
-		break;
-		case 6: mString = "Jul";
-		break;
-		case 7: mString = "Aug";
-		break;
-		case 8: mString = "Sep";
-		break;
-		case 9: mString = "Oct";
-		break;
-		case 10: mString = "Nov";
-		break;
-		case 11: mString = "Dec";
-		break;
-		default: mString = "";
-	}
-	return mString;
+	const months = [
+		"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+	];
+	//const d = new Date();
+	let month = months[m];
+	return month;
 }
 
-/*
-// Return a full month name based the month passed
+// Return the full month name based on the month passed
 const getFullMonthName = function(m) {
-	var mString
-	switch(m) {
-		case 0: mString = "January";
-		break;
-		case 1: mString = "February";
-		break;
-		case 2: mString = "March";
-		break;
-		case 3: mString = "April";
-		break;
-		case 4: mString = "May";
-		break;
-		case 5: mString = "June";
-		break;
-		case 6: mString = "July";
-		break;
-		case 7: mString = "August";
-		break;
-		case 8: mString = "September";
-		break;
-		case 9: mString = "October";
-		break;
-		case 10: mString = "November";
-		break;
-		case 11: mString = "December";
-		break;
-		default: mString = "";
-	}
-	return mString;
-} */
+	const months = [
+		"January", "February", "March", "April", "May", "June",
+		"July", "August", "Sepember", "October", "November", "December"
+	];
+	//const d = new Date();
+	let month = months[m];
+	return month;
+}
 
 export default DisplaySchedule;
