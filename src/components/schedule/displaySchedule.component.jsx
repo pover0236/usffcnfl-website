@@ -21,8 +21,6 @@ function DisplaySchedule() {
 		<table className='table table-striped'>
 		<Async promiseFn={loadSchedule}>
 			{({ data, err, isLoading }) => {
-			//if (isLoading) return "Loading..."
-			//if (err) return `Something went wrong: ${err.message}`
 			if (isLoading) return (
 				<tbody>
 					<tr>

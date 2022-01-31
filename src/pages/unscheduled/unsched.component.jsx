@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../../components/banner/banner.component';
-import DisplayUnsched from '../../components/unscheduled/unsched.component';
+import DisplayUnsched from '../../components/unscheduled/displayUnsched.component';
 import './unsched.styles.scss';
 
 const Unscheduled = () => (
