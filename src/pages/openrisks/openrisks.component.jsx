@@ -1,4 +1,5 @@
 import React from 'react';
+import DisplayOpenRisks from '../../components/openRisks/displayOpenRisks.component';
 import Banner from '../../components/banner/banner.component';
 
 import './openrisks.styles.scss';
@@ -13,17 +14,7 @@ const OpenRisks = () => (
             <p>You can view a brief description of any risk by clicking its title in the table below. To view the complete risk form, which includes mitigation actions, click the PDF icon in the 'View' column for that risk.</p>
         </div>
         <div className='openrisklist'>
-            <table className='table table-condensed'>
-            <thead>
-			<tr>
-				<th>ID Number</th>
-				<th className='centered'>Criticality</th>
-				<th>Title</th>
-				<th>ID Date</th>
-				<th className='centered'>View</th>
-			</tr>
-            </thead>
-		</table>
+            <DisplayOpenRisks />
         </div>
     </div>
 

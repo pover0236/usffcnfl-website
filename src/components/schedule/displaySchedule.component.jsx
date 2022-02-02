@@ -5,7 +5,6 @@ import GenWrap from '../../genericWrapper';
 //@ts-ignore
 import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './schedule.styles.scss';
 
 let mnth = -1;
 
@@ -44,7 +43,7 @@ function DisplaySchedule() {
 					  <th>Seminar</th>
 					  <th>Offered By</th>
 					  <th>Location</th>
-					  <th>Register</th>
+					  <th className='centered'>Register</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -92,9 +91,9 @@ const getMonthHeader = function(m, d){
 			if (classDate.getMonth() > curMnth) {
 			mnth = classDate.getMonth()
 				return (
-					<tr className='monthName'>
+					<tr className='table-subhead'>
 						<td colSpan='5'>
-							{getFullMonthName(curMnth+1)}
+							{getFullMonthName(mnth)}
 						</td>
 					</tr>
 				);

@@ -41,6 +41,7 @@ const Homepage = () => (
 			<p>As of January 2017, U.S. Fleet Forces Command (USFFC) assumed responsibility for the program – now
 			formally known as Naval Forces Logistics (NFL) Support and Training Services – which supports fleet
 			logistics operations at locations worldwide. In addition to USFFC, our significant customers include:</p>
+
 			<ul>
 				<li>Commander Naval Air Forces Atlantic and Pacific (CNAL/CNAP)</li>
 				<li>Commander Naval Surface Forces Atlantic and Pacific (CNSL/CNSP)</li>
@@ -48,6 +49,7 @@ const Homepage = () => (
 				<li>U.S. Marine Corps Aviation Support Activities (1st, 2nd, 3rd, and 4th MAWs)</li>
 				<li>Naval Expeditionary Command Commands (NECC)</li>
 			</ul>
+
             <h4>Who We Are</h4>
 			<p>The USFFC NFL program currently employees over 300 personnel globally, virtually all of whom are co-located
 			with our customers. All of our logistics and information systems analysts are former Navy and Marine Corps

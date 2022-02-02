@@ -6,20 +6,19 @@ import GenWrap from '../../genericWrapper';
 import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-let team = "";
+import pdf from '../../images/PDF_24.png';
 
 // Request Data from API
-const loadUnsched = () =>
-  fetch("https://x73lmaljkc.execute-api.us-east-1.amazonaws.com/items")
+const loadOpenRisks = () =>
+  fetch("https://xuqj1ufu0l.execute-api.us-east-1.amazonaws.com/items")
     .then(res => (res.ok ? res : Promise.reject(res)))
     .then(res => res.json())
 
 // DisplaySchedule component
-function DisplayUnsched() {
+function DisplayOpenRisks() {
 	return (
 		<table className='table table-striped'>
-		<Async promiseFn={loadUnsched}>
+		<Async promiseFn={loadOpenRisks}>
 			{({ data, err, isLoading }) => {
 			if (isLoading) return (
 				<tbody>
@@ -36,29 +35,30 @@ function DisplayUnsched() {
 				</tbody>
 			)
 			if (data)
+			console.log(data)
 			return (
 				<GenWrap>
 				<thead>
-					<tr>
-					  <th>Topic</th>
-					  <th className='centered'>Request Info</th>
-					</tr>
+				<tr>
+					<th>ID Number</th>
+					<th className='centered'>Criticality</th>
+					<th>Title</th>
+					<th>ID Date</th>
+					<th>View</th>
+				</tr>
 				</thead>
 				<tbody>
-				{data.Items.map(unsched=> (
+				{data.Items.map(risk=> (
 					<GenWrap>
-						<GenWrap>
-							{getTeamHeader(team, unsched.OfferedBy)}
-						</GenWrap>
-						<tr key={unsched.code}>
-							<td>{unsched.CourseName} ({unsched.Platform})</td>
-							<td className='centered' 
+						<tr key={risk.id}>
+							<td>{risk.id}</td>
+							<td className='centered'>{risk.criticality}</td>
+							<td>{risk.title}</td>
+							<td>{risk.openDate}</td>
+							<td
 								data-toggle='tooltip' 
-								title='Click to request info'>
-								<button  type="button" 
-									className='btn btn-outline-secondary btn-sm regBtn'>
-									Request
-								</button>
+								title='Click to view PDF'>
+								<img src={ pdf } alt='Adobe Acrobat PDF logo' />
 							</td>
 						</tr>
 					</GenWrap>
@@ -68,7 +68,7 @@ function DisplayUnsched() {
 			)
 			}}
 		</Async>
-        <GenWrap>
+		<GenWrap>
             <tfoot>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -80,20 +80,4 @@ function DisplayUnsched() {
   );
 }
 
-const getTeamHeader = function(t, o){
-	let curTm = t;
-	let newTm = o;
-		if (newTm !== curTm) {
-			team = newTm;
-				return (
-					<tr className='table-subhead'>
-						<td colSpan='5'>
-							{team}
-						</td>
-					</tr>
-				);
-		}
-		else {return null};
-};
-
-export default DisplayUnsched;
+export default DisplayOpenRisks;
